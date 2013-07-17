@@ -1,12 +1,10 @@
 <?php
 
-namespace Ideup\SimplePaginatorBundle\Paginator\Exception;
+namespace Lecteurs\PaginatorBundle\Paginator\Exception;
 
 /**
  * AdapterNotSupportedException
  *
- * @package IdeupSimplePaginatorBundle
- * @subpackage Exception
  * @author Francisco Javier Aceituno <javier.aceituno@ideup.com>
  */
 class AdapterNotSupportedException extends \Exception

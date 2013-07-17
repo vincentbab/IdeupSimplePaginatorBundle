@@ -1,22 +1,16 @@
 <?php
 
-namespace Ideup\SimplePaginatorBundle\Paginator\Adapter\Doctrine\ORM;
+namespace Lecteurs\PaginatorBundle\Paginator\Adapter\Doctrine\ORM;
 
-use
-    Doctrine\ORM\Query,
-    DoctrineExtensions\Paginate\Paginate,
-
-    Ideup\SimplePaginatorBundle\Paginator\Adapter\AdapterInterface
-;
+use Doctrine\ORM\Query;
+use DoctrineExtensions\Paginate\Paginate;
+use Lecteurs\PaginatorBundle\Paginator\Adapter\AdapterInterface;
 
 
 /**
  * QueryAdapter
  *
- * @package IdeupSimplePaginatorBundle
- * @subpackage Adapter
  * @author Francisco Javier Aceituno <javier.aceituno@ideup.com>
-
  */
 class QueryAdapter implements AdapterInterface
 {
@@ -33,7 +27,7 @@ class QueryAdapter implements AdapterInterface
     }
 
     /**
-     * {@inheritdoc }
+     * {@inheritdoc}
      */
     public function getTotalResults()
     {
@@ -41,28 +35,30 @@ class QueryAdapter implements AdapterInterface
     }
 
     /**
-     * {@inheritdoc }
+     * {@inheritdoc}
      */
     public function setOffset($offset)
     {
         $this->query->setFirstResult($offset);
+        
         return $this;
     }
 
     /**
-     * {@inheritdoc }
+     * {@inheritdoc}
      */
     public function setLength($length)
     {
         $this->query->setMaxResults($length);
+        
         return $this;
     }
 
     /**
-     * {@inheritdoc }
+     * {@inheritdoc}
      */
-    public function getResult($hidrationMode=null)
+    public function getResult($hydrationMode=null)
     {
-        return $this->query->getResult($hidrationMode);
+        return $this->query->getResult($hydrationMode);
     }
 }

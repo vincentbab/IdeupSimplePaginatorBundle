@@ -1,19 +1,16 @@
 <?php
 
-namespace Ideup\SimplePaginatorBundle\Paginator;
+namespace Lecteurs\PaginatorBundle\Paginator;
 
-use
-    Symfony\Component\HttpFoundation\Request,
-    Ideup\SimplePaginatorBundle\Paginator\Adapter\AdapterFactory
-;
+use Symfony\Component\HttpFoundation\Request;
+use Lecteurs\PaginatorBundle\Paginator\Adapter\AdapterFactory;
 
 /**
  * Paginator
  *
- * @package IdeupSimplePaginatorBundle
- * @subpackage Paginator
  * @author Francisco Javier Aceituno <javier.aceituno@ideup.com>
  * @author Moises Maciá <moises.macia@ideup.com>
+ * @author Vincent Bab <vincentbab@gmail.com>
  */
 class Paginator
 {

@@ -1,18 +1,13 @@
 <?php
 
-namespace Ideup\SimplePaginatorBundle\Paginator\Adapter;
+namespace Lecteurs\PaginatorBundle\Paginator\Adapter;
 
-use
-    Ideup\SimplePaginatorBundle\Paginator\Adapter\AdapterInterface
-;
+use Lecteurs\PaginatorBundle\Paginator\Adapter\AdapterInterface;
 
 /**
  * ArrayAdapter
  *
- * @package IdeupSimplePaginatorBundle
- * @subpackage Adapter
  * @author Francisco Javier Aceituno <javier.aceituno@ideup.com>
-
  */
 class ArrayAdapter implements AdapterInterface
 {    
@@ -26,7 +21,7 @@ class ArrayAdapter implements AdapterInterface
     }
 
     /**
-     * {@inheritdoc }
+     * {@inheritdoc}
      */
     public function getTotalResults()
     {
@@ -34,7 +29,7 @@ class ArrayAdapter implements AdapterInterface
     }
 
     /**
-     * {@inheritdoc }
+     * {@inheritdoc}
      */
     public function setOffset($offset)
     {
@@ -43,7 +38,7 @@ class ArrayAdapter implements AdapterInterface
     }
 
     /**
-     * {@inheritdoc }
+     * {@inheritdoc}
      */
     public function setLength($length)
     {
@@ -52,7 +47,7 @@ class ArrayAdapter implements AdapterInterface
     }
 
     /**
-     * {@inheritdoc }
+     * {@inheritdoc}
      */
     public function getResult()
     {

@@ -1,18 +1,14 @@
 <?php
 
-namespace Ideup\SimplePaginatorBundle\Templating\Helper;
+namespace Lecteurs\PaginatorBundle\Templating\Helper;
 
-use
-    Doctrine\Common\Util\Debug,
-    Symfony\Component\Templating\Helper\Helper,
-    Symfony\Component\DependencyInjection\ContainerInterface
-;
+use Doctrine\Common\Util\Debug;
+use Symfony\Component\Templating\Helper\Helper;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Paginator
+ * PaginatorHelper
  *
- * @package IdeupSimplePaginatorBundle
- * @subpackage Paginator
  * @author Francisco Javier Aceituno <javier.aceituno@ideup.com>
  * @author Gustavo Piltcher
  */
@@ -45,20 +41,11 @@ class PaginatorHelper extends Helper
      */
     public function render($route, $id = null, $options = array(), $view = null)
     {
-        $view = (!is_null($view)) ? $view : 'IdeupSimplePaginatorBundle:Paginator:simple-paginator-list-view.html.twig';
+        $view = (!is_null($view)) ? $view : 'LecteursPaginatorBundle::pagination.html.twig';
 
         $defaultOptions = array(
-            'container_class'       => 'simple_paginator',
             'id'                    => $id,
             'route'                 => $route,
-
-            'previousPageText'      => 'previous',
-            'previousEnabledClass'  => 'left',
-            'previousDisabledClass' => 'left_disabled',
-
-            'firstPageText'         => 'first',
-            'firstEnabledClass'     => 'first',
-            'firstDisabledClass'    => 'first_disabled',
 
             'firstPage'             => $this->getPaginator()->getFirstPage(),
 
@@ -74,14 +61,6 @@ class PaginatorHelper extends Helper
 
             'lastPage'              => $this->getPaginator()->getLastPage($id),
 
-            'lastPageText'          => 'last',
-            'lastEnabledClass'      => 'last',
-            'lastDisabledClass'     => 'last_disabled',
-
-            'nextPageText'          => 'next',
-            'nextEnabledClass'      => 'right',
-            'nextDisabledClass'     => 'right_disabled',
-
             'routeParams'           => (\array_key_exists('route_params', $options) && is_array($options['route_params'])) ? $options['route_params'] : array()
         );
 
@@ -95,7 +74,7 @@ class PaginatorHelper extends Helper
      */
     public function getName()
     {
-        return 'simple_paginator_helper';
+        return 'paginator';
     }
 
 }

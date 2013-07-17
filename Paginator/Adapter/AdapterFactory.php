@@ -1,15 +1,11 @@
 <?php
 
-namespace Ideup\SimplePaginatorBundle\Paginator\Adapter;
+namespace Lecteurs\PaginatorBundle\Paginator\Adapter;
 
-use
-    Ideup\SimplePaginatorBundle\Paginator\Exception\AdapterNotSupportedException
-;
+use Lecteurs\PaginatorBundle\Paginator\Exception\AdapterNotSupportedException;
 /**
  * AdapterFactory
  *
- * @package IdeupSimplePaginatorBundle
- * @subpackage Adapter
  * @author Francisco Javier Aceituno <javier.aceituno@ideup.com>
  */
 class AdapterFactory
@@ -18,7 +14,9 @@ class AdapterFactory
      * This method recieve a data collection and returns the corresponding adapter.
      *
      * @param mixed $collection
+     *
      * @return AdapterInterface
+     *
      * @throws Ideup\SimplePaginatorBundle\Paginator\Exception\AdapterNotSupportedException
      */
     public function createAdapter($collection)
@@ -34,9 +32,7 @@ class AdapterFactory
             }
         }
 
-        $adapterName =
-            __NAMESPACE__ . "\\" . $className . 'Adapter'
-        ;
+        $adapterName = __NAMESPACE__ . "\\" . $className . 'Adapter';
 
         return new $adapterName($collection);
     }

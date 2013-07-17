@@ -1,28 +1,23 @@
 {
-    "name": "ideup/simple-paginator-bundle",
+    "name": "lecteurs/paginator-bundle",
     "description": "Symfony 2 paginator bundle.",
     "keywords": ["paginator", "recordset"],
     "type": "symfony-bundle",
     "license": "",
     "authors": [
         {
-            "name":     "Francisco Javier Aceituno Lapido",
-            "homepage": "https://github.com/javiacei",
-            "email":    "fco.javier.aceituno@gmail.com"
-        },
-        {
-            "name":     "Moisés Maciá",
-            "homepage": "https://github.com/mmacia",
-            "email":    "mmacia@gmail.com"
+            "name":     "Vincent Bab",
+            "homepage": "https://github.com/vincentbab",
+            "email":    "vincentbab@gmail.com"
         }
     ],
     "require": {
         "php":             ">=5.3.0",
         "symfony/symfony": ">=2.0",
-        "beberlei/DoctrineExtensions":  "dev-master"
+        "beberlei/DoctrineExtensions":  ">=0.1"
     },
     "autoload": {
-        "psr-0": { "Ideup\\SimplePaginatorBundle": "" }
+        "psr-0": { "Lecteurs\\PaginatorBundle": "" }
     },
-    "target-dir": "Ideup/SimplePaginatorBundle"
+    "target-dir": "Lecteurs/PaginatorBundle"
 }

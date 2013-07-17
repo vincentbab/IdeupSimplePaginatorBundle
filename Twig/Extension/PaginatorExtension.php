@@ -1,22 +1,19 @@
 <?php
 
-namespace Ideup\SimplePaginatorBundle\Twig\Extension;
+namespace Lecteurs\PaginatorBundle\Twig\Extension;
 
-use
-    Ideup\SimplePaginatorBundle\Templating\Helper\PaginatorHelper,
-    Ideup\SimplePaginatorBundle\Paginator\Paginator as Paginator
-;
+use Lecteurs\PaginatorBundle\Templating\Helper\PaginatorHelper;
+use Lecteurs\PaginatorBundle\Paginator\Paginator;
 
 class PaginatorExtension extends \Twig_Extension
 {
-
     /**
      *  @var  $pagebar
      */
     protected $pagebar;
 
     /**
-     *  @param Ideup\SimplePaginatorBundle\Templating\Helper\PaginatorHelper $pagebar
+     *  @param Lecteurs\PaginatorBundle\Templating\Helper\PaginatorHelper $pagebar
      */
     public function __construct(PaginatorHelper $pagebar)
     {
@@ -25,12 +22,13 @@ class PaginatorExtension extends \Twig_Extension
 
     /**
      *  @return array
+     * 
      *  @see \Twig_Extension
      */
     public function getFunctions()
     {
         return array(
-            'simple_paginator_render'   => new \Twig_Function_Method($this, 'render', array('is_safe' => array('html')))
+            'paginator_render'   => new \Twig_Function_Method($this, 'render', array('is_safe' => array('html')))
         );
     }
 
@@ -41,6 +39,7 @@ class PaginatorExtension extends \Twig_Extension
      *  @param string $id
      *  @param array $options
      *  @param string $view
+     *
      *  @return string
      */
     public function render($route, $id = null, $options = array(), $view = null)
@@ -53,7 +52,7 @@ class PaginatorExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'simple_paginator_extension';
+        return 'paginator_extension';
     }
 
 }

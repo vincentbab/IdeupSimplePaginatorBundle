@@ -1,12 +1,10 @@
 <?php
 
-namespace Ideup\SimplePaginatorBundle\Paginator\Adapter;
+namespace Lecteurs\PaginatorBundle\Paginator\Adapter;
 
 /**
  * AdapterInterface
  *
- * @package IdeupSimplePaginatorBundle
- * @subpackage Adapter
  * @author Francisco Javier Aceituno <javier.aceituno@ideup.com>
  */
 interface AdapterInterface
@@ -20,6 +18,7 @@ interface AdapterInterface
      * This method sets the first element to display
      *
      * @param integer $offset
+     * 
      * @return AdapterInterface. Returns itself
      */
     public function setOffset($offset);
@@ -28,6 +27,7 @@ interface AdapterInterface
      * This method sets the maximum number of elements
      * 
      * @param integer $lenght
+     * 
      * @return AdapterInterface. Returns itself
      */
     public function setLength($length);
